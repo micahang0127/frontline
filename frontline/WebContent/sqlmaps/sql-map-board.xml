@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.rog//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="lab10.board.dao.BoardDAO">
+	<select id="getBoardList"  resultType="lab10.borad.vo.Board">
+		select * from board <if test= "seq!=0"> <where> seq=#{seq}</where></if>
+	</select>
+	
+		<select id="getBoardList1"  resultType="lab10.borad.vo.Board">
+		select * from (select rownum rn, seq, title, writer, content, regdate,  cnt 
+      from (SELECT *  FROM board order by seq desc )
+      where rownum &lt;= #{pageNo} *10 ) where rn between (#{pageNo}-1)*10+1 and #{pageNo}*10 
+	</select>
+	
+	<select id="searchBoardList"  resultType="lab10.borad.vo.Board">
+		select * from board <if test="title != null"><where> title like '%'||#{title}||'%'</where> </if>
+	</select>
+	
+	<select id="getReplyList"  resultMap="replyResult">
+		select * from reply <where> board_seq =#{boardSeq}</where>
+	</select>
+	
+	<insert id="insertBoard" parameterType="lab10.borad.vo.Board">
+		insert into board (seq,title,content,writer) values (board_seq.NEXTVAL,#{title},#{content},#{writer})
+	</insert>
+	
+	<insert id="insertReply" parameterType="lab10.borad.vo.Reply">
+		insert into reply (board_seq,seq,writer,content) values (#{boardSeq},reply_seq.NEXTVAL,#{writer},#{content})
+	</insert>
+	
+	<delete id="deleteBoard" parameterType="lab10.borad.vo.Board">
+		insert into board (seq,title,content,writer) values (board_seq.NEXTVAL,#{title},#{content},#{writer})
+	</delete>
+	
+	<delete id="deleteReply" parameterType="lab10.borad.vo.Reply">
+		delete from reply <where>seq=#{seq}</where>
+	</delete>
+	
+	<update id="updateCnt" parameterType="lab10.borad.vo.Board">
+		update board set cnt = #{cnt}+1 <where>seq =#{seq}</where>
+	</update>
+	
+	<resultMap type="lab10.borad.vo.Reply" id="replyResult" >
+	<result column="board_seq" property="boardSeq"/>
+	<result column="seq" property="seq"/>
+	<result column="writer" property="writer"/>
+	<result column="content" property="content"/>
+	<result column="regdate" property="regdate"/>
+	</resultMap>
+</mapper>
+
