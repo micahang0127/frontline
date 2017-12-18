@@ -3,17 +3,17 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
  
-<mapper namespace= "userControlMapper" >
-<select id ="exSelect" parameterType="java.util.HashMap" resultType= "java.util.HashMap">
+<mapper namespace= "com.frontline.newssummary.dao.MemberDAO" >
+<select id ="getMember" parameterType="com.frontline.newssummary.vo.MemberVO" resultType= "com.frontline.newssummary.vo.MemberVO">
 select *
-from search
-where keyword = #{keyword}
+from member
+where id = #{id}
 </select >
  
-<insert id ="exInsert" parameterType="java.util.HashMap" >
-insert into search
-(keyword, description)
+<insert id ="insertMember" parameterType="com.frontline.newssummary.vo.MemberVO" >
+insert into member
+(id, pw, email, nickname)
 values
-( #{keyword}, #{description} )
+( #{id}, #{pw}, #{email}, #{nickname} )
 </insert >
 </mapper>

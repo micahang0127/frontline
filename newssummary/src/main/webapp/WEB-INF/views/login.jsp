@@ -30,17 +30,17 @@
 
 <center>
 <body onload="focusIt()">
-	<form name="inform"  method="post"  action="-------------" onsubmit="return checkIt();">
+	<form name="inform"  method="post"  action="loginForm.do" onsubmit="return checkIt();">
 	<b><font size="5" color="skyblue">로그인</font></b><br/>
 	<table border="3"  bordercolor="skyblue">
 		<tr>
 		<td bgcolor="skyblue"  style="text-align:center" >&nbsp; &nbsp; &nbsp; ID :&nbsp; &nbsp; &nbsp;     <input type="text"  name="id"  width="50'"/></td></tr>
 		<tr>
-		<td bgcolor="skyblue" >Password : <input type="password"  name="password" width="50'"/></td></tr>
+		<td bgcolor="skyblue" >Password : <input type="password"  name="pw" width="50'"/></td></tr>
 		</table><br/>
 		<input type="submit" value="로그인"/>
-	<input type="button" value="아이디/비밀번호 찾기"  onclick="location.href="findLogin.jsp"/>
-	<input type="button" value="회원가입"  onclick="location.href="join.jsp"/>
+	<input type="button" value="아이디/비밀번호 찾기"  onclick="location.href="findLogin.do"/>
+	<input type="button" value="회원가입"  onclick="location.href="join.do"/>
 
 </form>
 </body>

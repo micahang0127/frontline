@@ -4,7 +4,7 @@
 <html>
 <head>
 <script type="text/javascript">
-location.href="index.jsp" 
+location.href="login.do"
 </script>
 </head>
 </html>

@@ -26,7 +26,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="Login">로그인</a>
+              <a class="nav-link" href="login.do">로그인</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="services.html">Services</a>
