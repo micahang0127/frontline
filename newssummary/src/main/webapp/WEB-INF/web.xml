@@ -22,7 +22,6 @@
 			<param-name>contextConfigLocation</param-name>
 			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
 		</init-param>
-		<load-on-startup>1</load-on-startup>
 	</servlet>
 		
 	<servlet-mapping>
@@ -43,13 +42,5 @@
     <filter-name>Encoding Filter</filter-name>
     <url-pattern>*.do</url-pattern>
   </filter-mapping>
-  <error-page>
-  <error-code>500</error-code>
-  <location>/error.jsp</location>
-  </error-page>
-  <error-page>
-  <error-code>404</error-code>
-  <location>/error.jsp</location>
-  </error-page>
   
 </web-app>

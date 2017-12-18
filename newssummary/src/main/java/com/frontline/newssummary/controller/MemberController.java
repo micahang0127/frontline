@@ -20,13 +20,16 @@ public class MemberController {
 	
 	@RequestMapping("login.do")
 	String showlogin() {
-		return "login";
+		return "logins";
 	}
 	
 	@RequestMapping("loginForm.do")
 	String getMember(MemberVO vo) {
 		memberService.getMember(vo);
-		return "login";
+		if(vo.getId().equals("scott")) {
+			System.out.println("scott 들어옴");
+		}
+		return "logins";
 	}
 	
 }

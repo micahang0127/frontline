@@ -30,7 +30,7 @@
 
 <center>
 <body onload="focusIt()">
-	<form name="inform"  method="post"  action="loginForm.do" onsubmit="return checkIt();">
+	<form name="inform"  method="get"  action="loginForm.do" onsubmit="return checkIt();">
 	<b><font size="5" color="skyblue">로그인</font></b><br/>
 	<table border="3"  bordercolor="skyblue">
 		<tr>

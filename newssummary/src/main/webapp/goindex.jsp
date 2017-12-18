@@ -4,7 +4,7 @@
 <html>
 <head>
 <script type="text/javascript">
-location.href="login.do"
+location.href="index.do"
 </script>
 </head>
 </html>
