@@ -14,12 +14,12 @@ public class MemberController {
 	@Autowired
 	MemberService memberService;
 	
-	@RequestMapping("index.do")
+	@RequestMapping("index")
 	String showIndex() {
 		return "index";
 	}
 	
-	@RequestMapping("login.do")
+	@RequestMapping("login")
 	String showlogin() {
 		return "logins";
 	}

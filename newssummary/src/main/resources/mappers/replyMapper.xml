@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+ 
+<mapper namespace= "com.frontline.newssummary.dao.ReplyDAO" >
+<select id ="replyList" parameterType="com.frontline.newssummary.vo.ReplyVO" resultType= "com.frontline.newssummary.vo.ReplyVO">
+select * from reply where sid = #{sid}
+</select >
+ 
+<insert id ="create" >
+insert into reply
+(sid, id, rank, nickname, content)
+values
+( #{sid}, #{id}, #{rank}, #{nickname}, #{content} )
+</insert >
+</mapper>
