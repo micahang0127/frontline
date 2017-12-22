@@ -12,6 +12,6 @@ public class SampleContoroller5 {
 	@RequestMapping("/doJSON.do")
 	public @ResponseBody ProductVO doJSON() {
 		ProductVO vo = new ProductVO("샘플상품",10000);
-		return vo;
+		return vo;//ss
 	}
 }
