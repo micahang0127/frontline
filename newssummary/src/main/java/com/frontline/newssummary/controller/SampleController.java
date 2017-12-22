@@ -6,15 +6,15 @@ import org.springframework.web.bind.annotation.RestController;
 import com.frontline.newssummary.vo.SampleVO;
 
 @RestController
-@RequestMapping("/sample")
+@RequestMapping("/sample.do")
 public class SampleController {
 	
-	@RequestMapping("/hello")
+	@RequestMapping("/hello.do")
 	public String sayHello() {
 		return "나는 타이어다.";
 	}
 
-	@RequestMapping("/sendVO")
+	@RequestMapping("/sendVO.do")
 	public SampleVO sendVO() {
 		SampleVO vo = new SampleVO();
 		vo.setMno(123);

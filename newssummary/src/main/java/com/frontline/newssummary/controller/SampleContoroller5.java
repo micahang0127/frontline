@@ -5,14 +5,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.frontline.newssummary.vo.MemberVO;
+import com.frontline.newssummary.vo.ProductVO;
 
 @Controller
 public class SampleContoroller5 {
 
-	@RequestMapping("/doJSON")
-	public @ResponseBody MemberVO doJSON() {
-		MemberVO vo = new MemberVO();
-		vo.setId("아이디");
+	@RequestMapping("/doJSON.do")
+	public @ResponseBody ProductVO doJSON() {
+		ProductVO vo = new ProductVO("샘플상품",10000);
 		return vo;
 	}
 }

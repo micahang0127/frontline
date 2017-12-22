@@ -12,7 +12,7 @@ public class SampleController2 {
 	private static final Logger logger=
 			LoggerFactory.getLogger(SampleController.class);
 	
-	@RequestMapping("doC")
+	@RequestMapping("doC.do")
 	public String doC( @ModelAttribute("msg") String msg) {
 		logger.info("doC called.....");
 		
