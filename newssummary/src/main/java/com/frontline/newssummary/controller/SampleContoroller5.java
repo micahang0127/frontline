@@ -4,7 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.frontline.newssummary.vo.MemberVO;
 import com.frontline.newssummary.vo.ProductVO;
 
 @Controller

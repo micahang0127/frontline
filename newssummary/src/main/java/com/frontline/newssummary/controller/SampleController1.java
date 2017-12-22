@@ -11,7 +11,7 @@ public class SampleController1 {
 		private static final Logger logger = 
 				LoggerFactory.getLogger(SampleController.class);
 		
-		@RequestMapping("doA")
+		@RequestMapping("/doA.do")
 		public void doA() {
 			logger.info("doA called.....");
 		}
