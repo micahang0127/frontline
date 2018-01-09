@@ -19,6 +19,11 @@ public class MemberController {
 		return "index";
 	}
 	
+	@RequestMapping("chatTest")
+	String chatIndex() {
+		return "chatTest";
+	}
+	
 	@RequestMapping("login")
 	String showlogin() {
 		return "logins";

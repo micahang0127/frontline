@@ -53,6 +53,13 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 
+		<!-- WebSocket for chatting -->
+		<dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-websocket</artifactId>
+          <version>4.1.6.RELEASE</version>
+      </dependency>
+
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
