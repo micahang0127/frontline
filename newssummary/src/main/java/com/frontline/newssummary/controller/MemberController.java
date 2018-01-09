@@ -24,6 +24,11 @@ public class MemberController {
 		return "chatTest";
 	}
 	
+	@RequestMapping("broadcasting")
+	String chat2Index() {
+		return "broadcasting";
+	}
+	
 	@RequestMapping("login")
 	String showlogin() {
 		return "logins";
