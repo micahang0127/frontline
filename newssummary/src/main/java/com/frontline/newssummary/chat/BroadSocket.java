@@ -33,7 +33,7 @@ public class BroadSocket {
         clients.add(session);
     }
     
-    @OnClose // 접속이 끈겼을때
+    @OnClose // 접속이 끊겼을때
     public void onClose(Session session) {
         clients.remove(session);
     }
