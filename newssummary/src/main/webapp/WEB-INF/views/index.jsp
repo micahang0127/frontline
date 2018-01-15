@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.frontline.newssummary.vo.MainSummaryListVO"%> 
+<%@ page import="java.util.List"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -12,6 +14,9 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+  	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.4/d3.layout.cloud.js"></script>
   </head>
   <body>
 
@@ -78,6 +83,7 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
         </ol>
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
@@ -101,6 +107,13 @@
               <p>This is a description for the third slide.</p>
             </div>
           </div>
+                    <!-- Slide 4 - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>four Slide</h3>
+              <p>This is a description for the four slide.</p>
+            </div>
+          </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -116,9 +129,11 @@
     <!-- Page Content -->
     <div class="container">
 
+	<!-- 
+
       <h1 class="my-4">Welcome to Modern Business</h1>
 
-      <!-- Marketing Icons Section -->
+      Marketing Icons Section
       <div class="row">
         <div class="col-lg-4 mb-4">
           <div class="card h-100">
@@ -154,12 +169,22 @@
           </div>
         </div>
       </div>
-      <!-- /.row -->
+      /.row
+      
+      -->
+     
 
       <!-- Portfolio Section -->
+      <b></b>
       <h2>Portfolio Heading</h2>
-
       <div class="row">
+<%
+	List<MainSummaryListVO> list = (List<MainSummaryListVO>) request.getAttribute("list");
+		for(int i = 0; (list != null) && i < 9; i++){
+			MainSummaryListVO msvo = (MainSummaryListVO) list.get(i);
+%>
+
+      
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
@@ -167,70 +192,17 @@
               <h4 class="card-title">
                 <a href="#">Project One</a>
               </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+              <p class="card-text"><%= msvo.getContent() %></p>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Two</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Three</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Four</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Five</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Six</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+			<%
+				}
+			%>       
       <!-- /.row -->
 
       <!-- Features Section -->
-      <div class="row">
+<!--       <div class="row">
         <div class="col-lg-6">
           <h2>Modern Business Features</h2>
           <p>The Modern Business template by Start Bootstrap includes:</p>
@@ -244,23 +216,68 @@
             <li>Unstyled page elements for easy customization</li>
           </ul>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
-        </div>
+        </div> 
         <div class="col-lg-6">
           <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
         </div>
       </div>
-      <!-- /.row -->
-
+      /.row
+ -->
       <hr>
 
       <!-- Call to Action Section -->
       <div class="row mb-4">
         <div class="col-md-8">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+          <style>
+    text:hover {
+        stroke: black;
+    }
+  </style>
+         <div id="cloud"></div>
+         <script type="text/javascript" charset="utf-8">
+    var weight = 200,   // change me
+        width = 960,
+        height = 500;
+    var fill = d3.scale.category20();
+    d3.csv("css/word.csv;charset=utf-8", function(d) {
+       //console.log(d);
+        return {
+          text: d.word,
+          size: weight/((+d.freq) + 1)
+        }
+      },
+      function(data) {
+        d3.layout.cloud().size([width, height]).words(data)
+          //.rotate(function() { return ~~(Math.random() * 2) * 90; })
+          .rotate(0)
+          .font("Impact")
+          .fontSize(function(d) { return d.size; })
+          .on("end", draw)
+          .start();
+        function draw(words) {
+          d3.select("#cloud").append("svg")
+              .attr("width", width)
+              .attr("height", height)
+            .append("g")
+              .attr("transform", "translate(" + (width/2) + "," + (height/2) + ")")
+            .selectAll("text")
+              .data(words)
+            .enter().append("text")
+              .style("font-size", function(d) { return d.size + "px"; })
+              .style("font-family", "Impact")
+              .style("fill", function(d, i) { return fill(i); })
+              .attr("text-anchor", "middle")
+              .attr("transform", function(d) {
+                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+              })
+            .text(function(d) { return d.text; });
+        }
+      });
+  </script>
         </div>
-        <div class="col-md-4">
+<!--         <div class="col-md-4">
           <a class="btn btn-lg btn-secondary btn-block" href="#">Call to Action</a>
-        </div>
+        </div> -->
       </div>
 
     </div>

@@ -43,7 +43,7 @@
 </script>
 <script type="text/javascript">
     var textarea = document.getElementById("messageWindow");
-    var webSocket = new WebSocket('ws://localhost:8080/broadcasting');
+    var webSocket = new WebSocket('ws://211.107.78.186:8080/broadcasting');
     var inputMessage = document.getElementById('inputMessage');
     webSocket.onerror = function(event) {
         onError(event)

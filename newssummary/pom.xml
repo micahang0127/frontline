@@ -60,7 +60,16 @@
 			<version>4.1.6.RELEASE</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-jsp //for pop up  chatting-->
+
+		<!-- jsoup HTML parser library @ https://jsoup.org/ -->
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.11.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-jsp //for 
+			pop up chatting -->
 		<dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-jsp</artifactId>

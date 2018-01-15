@@ -1,6 +1,7 @@
 package com.frontline.newssummary.controller;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,9 +17,10 @@ public class MemberController {
 	MemberService memberService;
 	
 	@RequestMapping("index")
-	String showIndex() {
+	String indexIndex() {
 		return "index";
 	}
+	
 	
 	@RequestMapping("chatTest")
 	String chatIndex() {
@@ -33,6 +35,11 @@ public class MemberController {
 	@RequestMapping("login")
 	String showlogin() {
 		return "logins";
+	}
+	
+	@RequestMapping("wordcloud")
+	String showWordCloud() {
+		return "wordcloud";
 	}
 	
 	@RequestMapping("join.do")
