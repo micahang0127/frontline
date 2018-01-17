@@ -9,9 +9,6 @@ select * from member where id = #{id}
 </select >
  
 <insert id ="insertMember" parameterType="com.frontline.newssummary.vo.MemberVO" >
-insert into member
-(id, pw, email, nickname)
-values
-( #{id}, #{pw}, #{email}, #{nickname} )
+insert into member (id, pw, email ) values ( #{id}, #{pw}, #{email})
 </insert >
 </mapper>

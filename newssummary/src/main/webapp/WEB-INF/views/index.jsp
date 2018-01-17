@@ -14,12 +14,31 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
+    <!-- login css -->
+    <link href="css/common.css" rel="stylesheet" />
+	<link href="css/layout.css" rel="stylesheet"/>
+
     <script src="http://code.jquery.com/jquery-latest.js"></script>
   	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.4/d3.layout.cloud.js"></script>
+  	<script src="js/jquery.leanModal.min.js"></script>
   </head>
   <body>
-
+	<!-- login window part (hidden)-->
+	<div id="loginmodal" style="display:none;">
+	<h2>LOGIN</h2>
+	<div class="p_c_text">회원이 되시면 여러가시 혜택을 누리실 수 있습니다.</div>
+	<div class="login_line">
+	<form name="inform"  method="post" action="loginForm.do">
+		<div class="box_in">
+		<input type="text" name="id" id="id" size="23" placeholder="아이디">
+		<input type="password" name="pw" id="pw" size="23" placeholder="비밀번호">
+		</div>
+		<input type="submit" value="로그인" class = "btn_login"/>
+		</form>
+	</div>
+	<div class="find_join"><a href="">아이디 / 비밀번호 찾기</a> | <a href="register">회원가입</a></div>
+</div>
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
@@ -30,7 +49,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="login.do">로그인</a>
+              <a class="nav-link" href="#loginmodal" id="modaltrigger" >로그인</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="services.html">Services</a>
@@ -146,28 +165,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4 mb-4">
-          <div class="card h-100">
-            <h4 class="card-header">Card Title</h4>
-            <div class="card-body">
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-          <div class="card h-100">
-            <h4 class="card-header">Card Title</h4>
-            <div class="card-body">
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
+
       </div>
       /.row
       
@@ -292,8 +290,17 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- login windows script -->
+    <script type="text/javascript">
+$(function(){
+  $('#loginform').submit(function(e){
+    return false;
+  });
+  
+  $('#modaltrigger').leanModal({ top: 110, overlay: 0.8, closeButton: ".hidemodal" });
+});
+</script>
 
   </body>
 

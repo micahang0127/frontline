@@ -21,7 +21,7 @@
     <div id="_chatbox" style="display: none">
         <fieldset>
             <div id="messageWindow"></div>
-            <br /> <input id="inputMessage" type="text" onkeyup="enterkey()" />
+            <br /> <input id="inputMessage" type="text"/>
             <input type="submit" value="send" onclick="send()" />
         </fieldset>
     </div>
@@ -98,11 +98,13 @@
         inputMessage.value = "";
     }
     //     엔터키를 통해 send함
-    function enterkey() {
-        if (window.event.keyCode == 13) {
+    $("#inputMessage").keyup(function(e){ 
+        var code = e.which; 
+        if(code==13)e.preventDefault();
+        if(code==13){
             send();
-        }
-    }
+        } 
+    });
     //     채팅이 많아져 스크롤바가 넘어가더라도 자동적으로 스크롤바가 내려가게함
     window.setInterval(function() {
         var elem = document.getElementById('messageWindow');

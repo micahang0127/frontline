@@ -14,7 +14,7 @@ import com.frontline.newssummary.vo.MemberVO;
 public class MemberService {
 	
 	@Autowired
-    SqlSessionTemplate sqlSession;  
+    SqlSessionTemplate sqlSession;
 	
 	public List<MemberVO> getMemberList (Map map){
 		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
@@ -26,7 +26,7 @@ public class MemberService {
 		return dao.getMember(vo);
 	}
 	
-	public MemberVO insertMember (MemberVO vo) {
+	public int insertMember (MemberVO vo) {
 		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
 		return dao.insertMember(vo);
 	}
