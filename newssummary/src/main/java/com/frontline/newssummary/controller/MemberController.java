@@ -16,14 +16,19 @@ public class MemberController {
 	@Inject
 	MemberService memberService;
 	
-	@RequestMapping("index")
-	String indexIndex() {
-		return "index";
-	}
-	
 	@RequestMapping("register")
 	String registerIndex() {
 		return "register";
+	}
+	
+	@RequestMapping("navigation")
+	String navigation() {
+		return "navigation";
+	}
+	
+	@RequestMapping("rollingtest")
+	String rollingtestIndex() {
+		return "rollingtest";
 	}
 	
 	@RequestMapping("contact")
@@ -31,6 +36,17 @@ public class MemberController {
 		return "contact";
 	}
 	
+	// 아이디/ 비밀번호 찾기
+	@RequestMapping("findLogin")
+	String findLoginIndex(){
+		return "findLogin";
+	}
+	
+	//아이디 체크확인 화면
+	@RequestMapping("findLogin_check")
+	String findLogin_checkIndex(){
+		return "findLogin_check";
+	}
 	
 	@RequestMapping("chatTest")
 	String chatIndex() {

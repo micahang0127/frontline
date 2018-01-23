@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/main/webapp/WEB-INF/resources/css/layout.css=UTF-8
 encoding//src/main/webapp/WEB-INF/views/contact.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/navigation.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/rollingtest.jsp=UTF-8
 encoding/<project>=UTF-8

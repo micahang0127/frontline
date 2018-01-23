@@ -48,14 +48,19 @@
 	    }
 
 	function registConfirmCheck(){
-		if(jungbockClick ==0){
-			alert('중복확인을 해주세요');
-		}else{
-		
 		var id = $('#userID').val();
 		var userPassword1 = $('#userPassword1').val();
 		var userPassword2 = $('#userPassword2').val();
 		var email = $('#userEmail').val();
+
+		if(jungbockClick ==0){
+			alert('중복확인을 해주세요');
+		}else if(id == ''){ alert('아이디를 넣어주세요');
+		}else if(userPassword1 == ''){ alert('비밀번호를 입력해주세요');
+		}else if(userPassword2 == ''){ alert('비밀번호 확인을 해주세요');
+		}else if(email == ''){ alert('이메일을 입력해주세요');
+		}
+		else{
 		
 		$.ajax({
             type : 'POST',
@@ -125,7 +130,7 @@
 					</tr>
 					<tr>
 						
-						<td style="text-align: Left" colspan="3"><h5 style="color: red:" id="passwordCheckMessage"></h5><input class="btn btn-primary pull-right" onsubmit="registConfirmCheck()" type="button" value="회원가입"></td>
+						<td style="text-align: Left" colspan="3"><h5 style="color: red:" id="passwordCheckMessage"></h5><input class="btn btn-primary pull-right" onclick="registConfirmCheck()" type="button" value="회원가입"></td>
 					</tr>
 	
 				</tbody>

@@ -11,7 +11,7 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
  
-@ServerEndpoint("/broadcasting")//클라에서 서버로 접속할 주소
+@ServerEndpoint("/contact")//클라에서 서버로 접속할 주소
 public class BroadSocket {
     private static Set<Session> clients = Collections.synchronizedSet(new HashSet<Session>());
     

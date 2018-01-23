@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+ 
+<mapper namespace= "com.frontline.newssummary.dao.MainSummaryListDAO" >
+<select id ="getMainSummaryList" parameterType="com.frontline.newssummary.vo.MainSummaryListVO" resultType= "com.frontline.newssummary.vo.MainSummaryListVO">
+select p.rank, a.title, p.popularOid, a.img from article a, popularnews p where a.oid = p.popularOid and a.aid = p.popularAid and p.popularSid =0
+
+</select >
+ 
+<insert id ="insertMainSummary" parameterType="com.frontline.newssummary.vo.MainSummaryListVO" >
+insert into summary
+(id, art_oid, art_aid, userid, content, like, hate, time)
+values
+( #{id}, #{art_oid}, #{art_aid}, #{userid}, #{content}, #{like}, #{hate}, #{time} )
+</insert>
+</mapper>
