@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+ 
+<mapper namespace= "com.frontline.newssummary.dao.SummaryDAO" >
+	<select id ="SummarySelect" resultType= "com.frontline.newssummary.vo.SummaryVO">
+	select * 
+	  from Summary
+	  where id = #{id}
+	</select>
+	
+	<select id ="SummaryCollect"  resultType="com.frontline.newssummary.vo.SummaryVO">
+	select * 
+	  from Summary
+	 where ( userid != 'bot1' and art_aid = #{art_aid} and art_oid = #{art_oid} )
+	 </select>
+
+	<select id ="likeHateColumnExistCheck" resultType= "String">
+	select likeChecker,hateChecker
+	  from likehatechecker
+	 where (id =#{id} and userid = #{userid})
+	</select>
+
+	<select id ="userLikeHateSelect" resultType= "com.frontline.newssummary.vo.LikeHateCheckerVO">
+	select * 
+	  from likehatechecker
+	 where id = #{id} and userid =#{userid}
+	</select>
+
+    <insert id="likeHateColumnInsert" parameterType="com.frontline.newssummary.vo.LikeHateCheckerVO">
+        insert into likehatechecker (id,userid)
+           VALUES (#{id}, #{userid})
+         
+    </insert> 
+
+    <update id="LikeUpdate" parameterType="com.frontline.newssummary.vo.SummaryVO">
+        UPDATE Summary
+           SET LIKES= likes +1
+         WHERE id=#{id}
+    </update> 
+    
+    <update id="HateUpdate" parameterType="com.frontline.newssummary.vo.SummaryVO">
+        UPDATE Summary
+           SET hate= hate +1
+         WHERE id=#{id}
+    </update> 
+    
+    <update id="LikeCheckerUpdate" parameterType="com.frontline.newssummary.vo.LikeHateCheckerVO">
+        UPDATE likehatechecker
+           SET likeChecker= likeChecker +1
+         WHERE id=#{id}
+    </update> 
+    
+    <update id="HateCheckerUpdate" parameterType="com.frontline.newssummary.vo.LikeHateCheckerVO">
+        UPDATE likehatechecker
+           SET hateChecker= hateChecker +1
+         WHERE id=#{id}
+    </update> 
+    
+    <insert id ="userSummaryInsert" parameterType="com.frontline.newssummary.vo.SummaryVO" >
+insert into summary
+(art_oid, art_aid, userid, content)
+values
+(#{art_oid}, #{art_aid}, #{userid}, #{content} )
+</insert>
+    
+</mapper>

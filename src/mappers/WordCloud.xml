@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+ 
+<mapper namespace= "com.frontline.newssummary.dao.WordCloudDAO" >
+	<select id ="getWordCloud" parameterType="com.frontline.newssummary.vo.WordCloudVO" resultType= "com.frontline.newssummary.vo.WordCloudVO">
+	select word , cnt
+	from wordcloud 
+	where word not like '_' order by cnt desc limit 20
+	</select >
+
+<!-- <select id ="getWordCloud" parameterType="com.frontline.newssummary.vo.WordCloudVO" resultType= "com.frontline.newssummary.vo.WordCloudVO">
+select keyid, keyword, art_oid, art_aid, art_date, rank from art_keywords 
+</select > -->
+
+</mapper>

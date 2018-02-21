@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+ 
+<mapper namespace= "com.frontline.newssummary.dao.MainSummaryListDAO" >
+<select id ="getMainSummaryList" parameterType="com.frontline.newssummary.vo.MainSummaryListVO" resultType= "com.frontline.newssummary.vo.MainSummaryListVO">
+select p.rank, a.title, a.oid, a.aid, a.sid, a.img, s.content
+from article a, popularnews p, summary s 
+where ((a.oid = p.popularOid)and (a.oid = s.art_oid))
+and ((a.aid = p.popularAid) and (a.aid = s.art_aid ))
+and (p.popularSid =0 and s.userid = 'bot1')
+</select >
+
+<select id ="getSubSummaryList" resultType= "com.frontline.newssummary.vo.SummaryListVO">
+select a.title, a.img, a.aid, a.oid, s.content 
+from article a, summary s 
+where (a.aid = s.art_aid and a.oid = s.art_oid and s.userid ='bot1'and a.sid=#{param1})
+ORDER BY id desc LIMIT #{param2} , #{param3}
+</select >
+ 
+</mapper>
